@@ -1,0 +1,211 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+
+.box{
+	position: relative;
+	background: #666;
+	height: 600px;
+	width: 300px;
+	border-radius: 50px;
+}
+
+
+.box:before{
+	content: '';
+	position: absolute;
+	inset: 3px;
+	background: black;
+	border-radius: 48px;
+}
+
+.inner{
+	position: absolute;
+	inset: 3px;
+	background: url(../img/bg.png);
+	background-size: cover;
+	background-position: center;
+	border-radius: 48px;
+	border: 10px solid black;
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.box:hover .inner{
+	opacity: 1;
+}
+
+
+.btn{
+	position: absolute;
+	top: 110px;
+	left: -2px;
+	width: 3px;
+	height: 26px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background: radial-gradient(#ccc, #666, #222);
+	z-index: 10;
+}
+
+.btn.btn-2{
+	top: 160px;
+	height: 40px;
+}
+
+.btn.btn-3{
+	top: 220px;
+	height: 40px;
+}
+
+.rightSidebtn{
+	position: absolute;
+	top: 170px;
+	right: -2px;
+	width: 3px;
+	height: 70px;
+	border-top-right: 4px;
+	border-bottom-right: 4px;
+	background: radial-gradient(#ccc, #666, #222);
+	z-index: 10;
+}
+
+
+.island-popup{
+	position: absolute;
+	width: 90px;
+	height: 25px;
+	background: black;
+	top: 10px;
+	border-radius: 20px;
+	transition: 0.5s ease-in-out;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.island-popup:hover{
+	width: 200px; 
+	height: 25px;
+}
+
+.island-popup.active{
+	width: 250px;
+	height: 60px;
+	border-radius: 50px;
+}
+
+.content{
+	position: relative;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding: 10px;
+	line-height: 25px;
+}
+
+.content p, .content img{
+	color: white;
+	font-size: 0.6rem;
+	cursor: default;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.5s;
+
+}
+
+.action{
+	position: relative;
+	color: white;
+	transition: 0.5s;
+	visibility: hidden;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	margin-right: 5px;
+}
+
+.red{
+	color: red;
+	transform: rotate(225deg);	
+	cursor: pointer;
+	transition: 0.5s;
+	font-size: 0.8rem;
+}
+
+.green{
+	color: lightgreen;
+	cursor: pointer;
+	transition: 0.5s;
+	font-size: 0.8rem;
+	transform: rotate(90deg);
+}
+
+.island-popup.active .action .action-1, .island-popup.active .action .action-2{
+	margin: 0 10px;
+}
+
+.island-popup:hover p, .island-popup.active img, .island-popup.active p, .island-popup:hover .action, .island-popup.active .action{
+	visibility: visible !important;
+	opacity: 1 !important;
+	transition-delay: 0.25s;
+}
+
+.island-popup.active .red{
+	background: red;
+	color: white;
+	border-radius: 50%;
+	box-shadow: 0 0 0 8px #fd443d;
+	
+}
+
+.island-popup.active .green{
+	background: lightgreen;
+	color: white;
+	border-radius: 50%;
+	box-shadow: 0 0 0 8px lightgreen;
+}
+
+.details{
+	display: flex;
+	align-items: center;
+}
+
+.details img{
+	border-radius: 50%;
+}
+
+.details{
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.details .imgBx{
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	overflow: hidden;
+	transition: 0.5s;
+}
+
+.island-popup.active .details .imgBx{
+	width: 40px;
+	height: 40px;
+	margin-right: 8px;
+}
+
+.action-1{
+	margin-right: 12px;
+}
